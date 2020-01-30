@@ -1,0 +1,52 @@
+body{
+  @media (min-width: 1200px) {
+    display: flex;
+    justify-content: center;
+  }
+}
+.content{
+  @media (min-width: 1200px) {
+    padding-right: 12%;
+    transform: rotate(90deg);
+    width: 25%;
+  }
+  .accord{
+    display: flex;
+    align-items: center;
+    margin: 1%;
+    background: #2e9788;
+    &-icon{
+      flex: 0.5;
+      display: flex;
+      justify-content: center;
+      background: #247a6f;
+      padding: 4%;
+      padding-right: 0%;
+      padding-left: 0%;
+      transition: linear 0.1s;
+  
+      &:hover{
+        padding-right: 4%;
+        padding-left: 4%;
+      }
+      img {
+        width: 50px;
+      }
+    }
+    &-title{
+      flex: 2;
+      margin-left: 2%;
+      @media (min-width: 1200px) {
+        margin-left: 5%;
+        margin-right: 5%;
+        transform: rotate(180deg);
+      }
+  
+      span{
+        color: #fff;
+        font-size: 115%;
+        font-weight: bold;
+      }
+    }
+  }
+}
