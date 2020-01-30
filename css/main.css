@@ -20,6 +20,15 @@
   }
 }
 
+.content .panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  -webkit-transition: max-height 0.2s ease-out;
+  transition: max-height 0.2s ease-out;
+}
+
 .content .accord {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -30,6 +39,7 @@
   margin: 1%;
   background: #2e9788;
   border: none;
+  max-height: 475px;
 }
 
 @media (min-width: 1200px) {
@@ -64,7 +74,7 @@
 
 @media (min-width: 1200px) {
   .content .accord-icon {
-    padding: 20%;
+    padding: 19%;
   }
 }
 

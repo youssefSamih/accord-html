@@ -7,9 +7,15 @@ body {
 
 .content {
     @media (min-width: 1200px) {
-        // width: 25%;
         display: flex;
         justify-content: center;
+    }
+    .panel {
+        padding: 0 18px;
+        background-color: white;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
     }
     .accord {
         display: flex;
@@ -17,14 +23,14 @@ body {
         margin: 1%;
         background: #2e9788;
         border: none;
-        // padding: 0.5%;
+        max-height: 475px;
         @media (min-width: 1200px) {
             flex-direction: column;
             height: 170%;
         }
         &-icon {
             @media (min-width: 1200px) {
-                padding: 20%;
+                padding: 19%;
             }
             flex: 0.4;
             display: flex;
