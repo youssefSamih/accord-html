@@ -6,8 +6,8 @@ body{
 }
 .content{
   @media (min-width: 1200px) {
-    padding-right: 12%;
-    transform: rotate(90deg);
+    padding-right: 2%;
+    transform: rotate(-90deg);
     width: 25%;
   }
   .accord{
@@ -15,6 +15,11 @@ body{
     align-items: center;
     margin: 1%;
     background: #2e9788;
+    border: none;
+
+    @media (min-width: 1200px) {
+      transform: rotate(180deg);
+    }
     &-icon{
       flex: 0.5;
       display: flex;
@@ -31,6 +36,10 @@ body{
       }
       img {
         width: 50px;
+        @media (min-width: 1200px) {
+          width: 42px;
+          transform: rotate(-90deg);
+        }
       }
     }
     &-title{
