@@ -2,8 +2,8 @@ const acc = document.getElementsByClassName("accord");
 let i;
 
 const WidthChange = mq => {
-    if (mq.matches) {
-        for (i = 0; i < acc.length; i++) {
+    for (i = 0; i < acc.length; i++) {
+        if (mq.matches) {
             acc[i].addEventListener("click", function() {
                 // this.classList.toggle("active");
                 const panel = this.nextElementSibling;
@@ -19,6 +19,9 @@ const WidthChange = mq => {
                     panel.style.maxHeight = panel.scrollHeight + "px";
                 }
             });
+        } else {
+            const panel = acc[i].nextElementSibling;
+            panel.style.display = "none"
         }
     }
 }

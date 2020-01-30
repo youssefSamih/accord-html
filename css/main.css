@@ -39,7 +39,7 @@
   margin: 1%;
   background: #2e9788;
   border: none;
-  max-height: 475px;
+  max-height: 442px;
 }
 
 @media (min-width: 1200px) {
@@ -106,6 +106,12 @@
 @media (min-width: 1200px) {
   .content .accord-icon img {
     width: 42px;
+  }
+}
+
+@media (max-width: 360px) {
+  .content .accord-icon img {
+    width: 30px;
   }
 }
 

@@ -23,7 +23,7 @@ body {
         margin: 1%;
         background: #2e9788;
         border: none;
-        max-height: 475px;
+        max-height: 442px;
         @media (min-width: 1200px) {
             flex-direction: column;
             height: 170%;
@@ -60,6 +60,9 @@ body {
                 width: 50px;
                 @media (min-width: 1200px) {
                     width: 42px;
+                }
+                @media (max-width: 360px) {
+                    width: 30px;
                 }
             }
         }
