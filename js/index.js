@@ -26,6 +26,7 @@ const WidthChange = mq => {
         } else {
             const panel = acc[i].nextElementSibling;
             panel.style.display = "none"
+            acc[2].childNodes[1].childNodes[1].style.width = "38px";
             acc[i].addEventListener("click", function() {
                 const panel = this.nextElementSibling;
                 for (let j = 0; j < acc.length; j++) {
@@ -35,9 +36,9 @@ const WidthChange = mq => {
                     // acc[j].style.height = '300%';
                     acc[j].style.maxHeight = '498px';
                     acc[j].style.marginTop = '16%';
-                    if(j === 2) {
-                        acc[j].childNodes[1].childNodes[1].style.width = "30px";
-                    }
+                    // if(j === 2) {
+                    //     acc[j].childNodes[1].childNodes[1].style.width = "30px";
+                    // }
                     if(j === 3) {
                         acc[j].style.marginTop = '15.1%';
                     }
@@ -61,6 +62,33 @@ const WidthChange = mq => {
                     panel.style.maxHeight = "365px";
                     panel.style.position = "absolute";
                     panel.style.width = "42%";
+                }
+                mh = window.matchMedia("(max-width: 1800px)");
+                mh.addListener(widthMh);
+                function widthMh(mh) {
+                    if(mh.matches) {
+                        for (let j = 0; j < acc.length; j++) {
+                            acc[j].style.marginTop = '20%';
+                        }
+                    }
+                }
+                mh = window.matchMedia("(max-width: 1500px)");
+                mh.addListener(widthfIVE);
+                function widthfIVE(mh) {
+                    if(mh.matches) {
+                        for (let j = 0; j < acc.length; j++) {
+                            acc[j].style.marginTop = '20%';
+                        }
+                    }
+                }
+                mh = window.matchMedia("(max-width: 1410px)");
+                mh.addListener(widthMFOUR);
+                function widthMFOUR(mh) {
+                    if(mh.matches) {
+                        for (let j = 0; j < acc.length; j++) {
+                            acc[j].style.marginTop = '20%';
+                        }
+                    }
                 }
             })
         }

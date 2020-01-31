@@ -248,6 +248,30 @@
   }
 }
 
+@media (max-width: 1765px) {
+  .content .accord-icon {
+    padding: 18%;
+  }
+}
+
+@media (max-width: 1600px) {
+  .content .accord-icon {
+    padding: 14%;
+  }
+}
+
+@media (max-width: 1500px) {
+  .content .accord-icon {
+    padding: 10%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .content .accord-icon {
+    padding: 2%;
+  }
+}
+
 @media (max-width: 1024px) {
   .content .accord-icon:hover {
     padding-right: 4%;
