@@ -4,21 +4,13 @@ let i;
 
 let slideUp = (target, duration = 100) => {
     target.style.display = 'none';
-    // target.style.opacity = 0;
-    // target.style.transition = "visibility 1s, opacity 0.5s linear";
-    // target.style.visibility = "hidden";
     target.classList.remove("fadeIn");
     target.classList.add("fadeOut");
 }
 
 let slideDown = (target, duration = 100) => {
     target.style.removeProperty('display');
-    // target.style.transitionProperty = 'height';
-    // target.style.transitionDuration = duration + 's';
     let display = 'block';
-    // target.style.opacity = 1;
-    // target.style.visibility = "visible";
-    // target.style.transition = "all 2s ease-in";
     target.style.display = display;
     target.classList.add("fadeIn");
     target.classList.remove("fadeOut");
@@ -92,7 +84,6 @@ const WidthChange = mq => {
                     acc[j].childNodes[1].childNodes[3].style.display = "flex";
                     acc[j].childNodes[3].style.display = 'none';
                     acc[j].style.background = 'none';
-                    // acc[j].style.height = '300%';
                     acc[j].style.maxHeight = '100px';
                     acc[j].style.marginTop = '0%';
                     acc[j].childNodes[1].childNodes[1].style.marginTop = "0"
@@ -101,15 +92,17 @@ const WidthChange = mq => {
                     acc[j].childNodes[1].classList.add('disaleHover');
                     acc[j].childNodes[1].style.width = "121px";
                     const panel = acc[j].nextElementSibling;
-                    // panel.style.display = "none"
+                    if(j === 2) {
+                        acc[j].childNodes[1].childNodes[1].style.width = "50%";
+                    }
                     slideUp(panel);
                     if (panel.style.maxHeight) {
                         panel.style.maxHeight = null;
-                        panel.style.width = "unset";
+                        // panel.style.width = "unset";
                     }
                 }
                 if (panel.style.maxHeight) {
-                    panel.style.width = "unset";
+                    // panel.style.width = "unset";
                     panel.style.display = "none"
                     panel.style.maxHeight = null;
                 } else {
@@ -117,8 +110,8 @@ const WidthChange = mq => {
                     slideDown(panel);
                     panel.style.maxHeight = "365px";
                     panel.style.position = "absolute";
-                    panel.style.width = "63.7%";
-                    panel.style.marginTop = "5.1%";
+                    // panel.style.width = "63.7%";
+                    // panel.style.marginTop = "5.1%";
                 }
                 mh = window.matchMedia("(max-width: 1800px)");
                 mh.addListener(widthMh);
