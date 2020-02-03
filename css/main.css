@@ -12,36 +12,44 @@
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
+    max-height: 0;
   }
   to {
     opacity: 1;
+    max-height: 365px;
   }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
+    max-height: 0;
   }
   to {
     opacity: 1;
+    max-height: 365px;
   }
 }
 
 @-webkit-keyframes fadeOut {
   from {
     opacity: 1;
+    max-height: 365px;
   }
   to {
     opacity: 0;
+    max-height: 0;
   }
 }
 
 @keyframes fadeOut {
   from {
     opacity: 1;
+    max-height: 365px;
   }
   to {
     opacity: 0;
+    max-height: 0;
   }
 }
 
@@ -71,14 +79,15 @@
   height: 100%;
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
-  width: 54.8%;
+  width: 90%;
+  margin: auto;
   margin-top: 4.1%;
 }
 
 @media (min-width: 1200px) {
   .content .panel {
-    width: 56.8%;
-    margin-top: 5.1%;
+    width: 69.1%;
+    margin-top: 8%;
   }
 }
 
@@ -224,6 +233,7 @@
   -webkit-box-flex: 0.5;
       -ms-flex: 0.5;
           flex: 0.5;
+  margin-left: 5%;
 }
 
 .content .panel-body .contents-right img {
@@ -240,6 +250,7 @@
   -webkit-box-flex: 1.3;
       -ms-flex: 1.3;
           flex: 1.3;
+  margin-left: 5%;
 }
 
 .content .panel-body .contents-left ul {
@@ -430,7 +441,7 @@
 
 .disaleHover:hover {
   padding-top: 0% !important;
-  padding-bottom: 0% !important;
+  padding-bottom: 30% !important;
 }
 
 .fadeIn {

@@ -131,12 +131,21 @@ const WidthChange = mq => {
                         }
                     }
                 }
+                mh = window.matchMedia("(max-width: 1300px)");
+                mh.addListener(widthMFOUR);
+                function widthMFOUR(mh) {
+                    if(mh.matches) {
+                        for (let j = 0; j < acc.length; j++) {
+                            acc[j].style.marginTop = '-1%';
+                        }
+                    }
+                }
                 mh = window.matchMedia("(max-width: 1410px)");
                 mh.addListener(widthMFOUR);
                 function widthMFOUR(mh) {
                     if(mh.matches) {
                         for (let j = 0; j < acc.length; j++) {
-                            acc[j].style.marginTop = '20%';
+                            acc[j].style.marginTop = '0%';
                         }
                     }
                 }
