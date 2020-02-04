@@ -112,19 +112,19 @@
 
 @-webkit-keyframes widthImg {
   from {
-    width: 90px;
+    width: 42px;
   }
   to {
-    width: 42px;
+    width: 30px;
   }
 }
 
 @keyframes widthImg {
   from {
-    width: 90px;
+    width: 42px;
   }
   to {
-    width: 42px;
+    width: 30px;
   }
 }
 
