@@ -1,14 +1,15 @@
 const acc = document.getElementsByClassName("accord");
 const tabsLinks = document.getElementsByClassName('tabsLinks');
 let i;
+let clicked = false;
 
-let slideUp = (target, duration = 100) => {
+let slideUp = (target) => {
     target.style.display = 'none';
     target.classList.remove("fadeIn");
     target.classList.add("fadeOut");
 }
 
-let slideDown = (target, duration = 100) => {
+let slideDown = (target) => {
     target.style.removeProperty('display');
     let display = 'block';
     target.style.display = display;
@@ -50,8 +51,20 @@ const displayTabs = (tabsLinks, e) => {
     }
 }
 
+const displayPanel = j => {
+    acc[j].childNodes[1].childNodes[1].classList.add('animwidthImg');
+    acc[j].childNodes[1].childNodes[3].style.display = "flex";
+    acc[j].classList.add('animateAccordDisplay');
+    acc[j].childNodes[3].style.opacity = '0';
+    acc[j].style.background = 'none';
+    acc[j].childNodes[1].childNodes[1].style.marginTop = "0"
+    acc[j].childNodes[1].childNodes[1].style.paddingTop = "10%"
+    acc[j].childNodes[1].style.width = "121px";
+    acc[j].childNodes[1].childNodes[3].style.transform="translateY(0px)";
+}
+
 const WidthChange = mq => {
-    for (i = 0; i < acc.length; i++) {
+    for (let i = 0; i < acc.length; i++) {
         document.getElementById("tab1").style.display = "flex";
         if (mq.matches) {
             acc[i].nextElementSibling.style.display = 'none';
@@ -76,21 +89,33 @@ const WidthChange = mq => {
             const panel = acc[i].nextElementSibling;
             panel.style.display = "none"
             acc[2].childNodes[1].childNodes[1].style.width = "38px";
+            acc[i].classList.remove('animateAccordDisplay');
+            acc[i].classList.remove('animateAccordHide');
             acc[i].addEventListener("click", function(e) {
+                clicked = false;
                 tabsLinks[0].click();
+                console.log(clicked);
                 const panel = this.nextElementSibling;
                 e.target.setAttribute('style', 'color: #fff');
                 for (let j = 0; j < acc.length; j++) {
-                    acc[j].childNodes[1].childNodes[3].style.display = "flex";
-                    acc[j].childNodes[3].style.display = 'none';
-                    acc[j].style.background = 'none';
-                    acc[j].style.maxHeight = '100px';
-                    acc[j].style.marginTop = '0%';
-                    acc[j].childNodes[1].childNodes[1].style.marginTop = "0"
-                    acc[j].childNodes[1].childNodes[1].style.paddingTop = "10%"
+                    if(!clicked) {
+                        setTimeout(() => {
+                            displayPanel(j);
+                        },360);
+                    } else {
+                        acc[j].childNodes[1].childNodes[3].style.display = "flex";
+                        acc[j].childNodes[3].style.opacity = '0';
+                        acc[j].childNodes[1].childNodes[3].style.transform="translateY(0px)";
+                        acc[j].childNodes[1].childNodes[1].style.paddingTop = "10%"
+                        acc[j].childNodes[1].style.width = "121px";
+                    }
                     acc[j].classList.add('disaleHover');
                     acc[j].childNodes[1].classList.add('disaleHover');
-                    acc[j].childNodes[1].style.width = "121px";
+                    // acc[j].childNodes[1].childNodes[3].style.display="none";
+                    // acc[j].childNodes[1].childNodes[3].style.transform="translateY(35px)";
+                    // acc[j].childNodes[1].childNodes[3].classList.add('h5Style');
+                    // acc[j].style.maxHeight = '100px';
+                    // acc[j].style.marginTop = '0%';
                     const panel = acc[j].nextElementSibling;
                     if(j === 2) {
                         acc[j].childNodes[1].childNodes[1].style.width = "50%";
@@ -113,7 +138,7 @@ const WidthChange = mq => {
                     // panel.style.width = "63.7%";
                     // panel.style.marginTop = "5.1%";
                 }
-                mh = window.matchMedia("(max-width: 1800px)");
+                mh = window.matchMedia("(max-width: 1800px) || (max-width: 1192px)");
                 mh.addListener(widthMh);
                 function widthMh(mh) {
                     if(mh.matches) {
@@ -153,16 +178,27 @@ const WidthChange = mq => {
         }
     }
     document.getElementsByClassName('close')[0].addEventListener("click", () => {
-        for (i = 0; i < acc.length; i++) {
-            acc[i].childNodes[1].childNodes[1].removeAttribute('style');
-            acc[i].childNodes[3].removeAttribute('style');
-            acc[i].removeAttribute('style');
-            acc[i].nextElementSibling.removeAttribute('style');
-            acc[i].nextElementSibling.setAttribute('style', 'display: none');
-            acc[i].childNodes[1].childNodes[3].removeAttribute('style');
-            acc[i].classList.remove('disaleHover');
-            acc[i].childNodes[1].classList.remove('disaleHover');
-            acc[i].childNodes[1].removeAttribute('style');
+        clicked = true;
+        for (let i = 0; i < acc.length; i++) {
+            acc[i].childNodes[1].childNodes[3].classList.add('Outh5Style');
+            // acc[i].classList.add('animateAccordHide');
+            acc[i].nextElementSibling.classList.add('fadeOut');
+            acc[i].childNodes[1].childNodes[1].classList.add('OutwidthImg');
+            setTimeout(() => {
+                acc[i].nextElementSibling.classList.remove('fadeIn');
+                acc[i].childNodes[1].childNodes[1].removeAttribute('style');
+                acc[i].childNodes[3].removeAttribute('style');
+                acc[i].removeAttribute('style');
+                acc[i].nextElementSibling.removeAttribute('style');
+                acc[i].nextElementSibling.setAttribute('style', 'display: none');
+                acc[i].childNodes[1].childNodes[3].classList.remove('h5Style');
+                acc[i].classList.remove('disaleHover');
+                acc[i].childNodes[1].classList.remove('disaleHover');
+                acc[i].childNodes[1].removeAttribute('style');
+                acc[i].classList.remove('animateAccordDisplay');
+                acc[i].childNodes[1].childNodes[1].removeAttribute('class');
+                acc[i].childNodes[1].childNodes[3].removeAttribute('style');
+            }, 300)
         }
     });
     for (let i = 0; i < tabsLinks.length; i++) {

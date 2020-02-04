@@ -8,29 +8,108 @@ body {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        max-height: 0;
+        // max-height: 0;
+        // width: 0;
     }
     to {
         opacity: 1;
-        max-height: 365px;
+        // max-height: 365px;
+        // width: 1050px;
     }
 }
 
 @keyframes fadeOut {
     from {
         opacity: 1;
-        max-height: 365px;
+        // max-height: 365px;
+        // width: 1050px;
     }
     to {
         opacity: 0;
-        max-height: 0;
+        // max-height: 0;
+        // width: 0;
+    }
+}
+
+@keyframes fadeInAccord {
+    from {
+        opacity: 1;
+        // background: none;
+        // max-height: 100px;
+        // width: 0;
+        // margin-top: 0%;
+    }
+    to {
+        opacity: 1;
+        // background: #2e9788;
+        // max-height: 365px;
+        // width: 1050px;
+        // margin-top: 1%;
+    }
+}
+
+@keyframes fadeOutAccord {
+    from {
+        opacity: 1;
+        // background: #2e9788;
+        // max-height: 442px;
+        // margin-top: 1%;
+        // width: 1050px;
+    }
+    to {
+        opacity: 0;
+        // background: none;
+        // max-height: 100px;
+        // margin-top: 0%;
+        // width: 0;
+    }
+}
+
+@keyframes h5Style {
+    from {
+        display: none;
+        transform: translateY(35px);
+    }
+    to {
+        display: flex;
+        transform: translateY(0px);
+    }
+}
+
+@keyframes widthImg {
+    from {
+        width: 90px;
+    }
+    to {
+        width: 42px;
+    }
+}
+
+@keyframes FadeOutwidthImg {
+    from {
+        width: 42px;
+    }
+    to {
+        width: 42px;
+    }
+}
+
+@keyframes FadeOuth5Style {
+    from {
+        display: flex;
+        transform: translateY(0px);
+    }
+    to {
+        display: none;
+        transform: translateY(35px);
     }
 }
 
 .content {
-    width: 900px;
+    width: 100%;
     transition: opacity 0.5s ease-in, width 1.5s ease-out;
     @media (min-width: 1200px) {
+        width: 1135px;
         display: flex;
         justify-content: center;
     }
@@ -46,14 +125,14 @@ body {
         margin: auto;
         margin-top: 4.1%;
         @media (min-width: 1200px) {
-            width: 69.1%;
-            margin-top: 8%;
+            width: 1083px;
+            margin-top: 104px;
         }
         @media (min-width: 2159px) {
             margin-top: 4.2%;
         }
         @media (min-width: 2144px) {
-            margin-top: 4.3%;
+            margin-top: 100px;
         }
         &-env {
             display: flex;
@@ -73,7 +152,7 @@ body {
         }
         h1 {
             color: #2e9788;
-            @media (max-width: 1024px) {
+            @media (max-width: 1025px) {
                 font-size: 100%;
             }
         }
@@ -81,7 +160,7 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            @media (max-width: 1024px) {
+            @media (max-width: 1025px) {
                 overflow: hidden;
                 overflow-y: auto;
             }
@@ -92,7 +171,7 @@ body {
                 margin-bottom: 10%;
                 flex: 1;
                 width: 110px;
-                @media (max-width: 1024px) {
+                @media (max-width: 1025px) {
                     width: 70px;
                 }
                 .tabsLinks {
@@ -109,7 +188,7 @@ body {
                     &:last-child {
                         border: none !important;
                     }
-                    @media (max-width: 1024px) {
+                    @media (max-width: 1025px) {
                         width: 160%;
                     }
                 }
@@ -117,13 +196,13 @@ body {
             .contents {
                 display: none;
                 margin-left: 10%;
-                @media (max-width: 1024px) {
+                @media (max-width: 1025px) {
                     height: 175px;
                     overflow: hidden;
                     overflow-y: auto;
                     flex-direction: column;
                 }
-                @media (max-width: 1024px) {
+                @media (max-width: 1025px) {
                     margin-left: 19%;
                 }
                 &-right {
@@ -131,7 +210,7 @@ body {
                     margin-left: 5%;
                     img {
                         width: 240px;
-                        @media (max-width: 1024px) {
+                        @media (max-width: 1025px) {
                             width: 150px;
                         }
                     }
@@ -185,16 +264,16 @@ body {
                 justify-content: flex-end;
                 width: 100%;
             }
-            @media (max-width: 1765px) {
-                padding: 18%;
-            }
-            @media (max-width: 1600px) {
-                padding: 14%;
-            }
+            // @media (max-width: 1765px) {
+            //     padding: 3px;
+            // }
+            // @media (max-width: 1600px) {
+            //     padding: 3px;
+            // }
             @media (max-width: 1500px) {
-                padding: 10%;
+                padding: 3px;
             }
-            @media (max-width: 1300px) {
+            @media (max-width: 1025px) {
                 padding: 2%;
             }
             flex: 0.4;
@@ -208,13 +287,13 @@ body {
             border: none;
             outline: none;
             &:hover {
-                @media (max-width: 1024px) {
+                @media (max-width: 1025px) {
                     padding-right: 4%;
                     padding-left: 4%;
                 }
                 @media (min-width: 1200px) {
-                    padding-top: 30%;
-                    padding-bottom: 30%;
+                    padding-top: 50%;
+                    padding-bottom: 50%;
                     cursor: pointer;
                 }
             }
@@ -231,6 +310,7 @@ body {
                 display: none;
                 width: 10%;
                 justify-content: center;
+                transform: translateY(35px);
             }
         }
         &-title {
@@ -261,15 +341,48 @@ body {
 
 .disaleHover:hover {
     padding-top: 0% !important;
-    padding-bottom: 30% !important;
+    padding-bottom: 0% !important;
 }
 
 .fadeIn {
-    display: block;
-    animation: fadeIn 1s;
+    // display: block;
+    animation: fadeIn 0.4s;
+    opacity: 1;
 }
 
 .fadeOut {
-    display: block;
-    animation: fadeIn 1s;
+    opacity: 0;
+    animation: fadeOut 0.4s;
+    // display: none;
+}
+
+.animateAccordHide{
+    animation: fadeOutAccord 0.1s;
+}
+
+.animateAccordDisplay{
+    animation: fadeInAccord 0.3s;
+}
+
+.accord-icon:hover ~ .accord-title {
+    @media (min-width: 1200px) {
+        transition: all 0.4s ease-in-out;
+        transform: rotate(-180deg) translateY(-35px);
+    }
+}
+
+.h5Style{
+    animation: h5Style 1.5s;
+}
+
+.Outh5Style {
+    animation: FadeOuth5Style 1s;
+}
+
+.animwidthImg{
+    animation: widthImg 0.4s;
+}
+
+.OutwidthImg{
+    animation: FadeOutwidthImg 0.6s;
 }

@@ -12,55 +12,178 @@
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
-    max-height: 0;
   }
   to {
     opacity: 1;
-    max-height: 365px;
   }
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    max-height: 0;
   }
   to {
     opacity: 1;
-    max-height: 365px;
   }
 }
 
 @-webkit-keyframes fadeOut {
   from {
     opacity: 1;
-    max-height: 365px;
   }
   to {
     opacity: 0;
-    max-height: 0;
   }
 }
 
 @keyframes fadeOut {
   from {
     opacity: 1;
-    max-height: 365px;
   }
   to {
     opacity: 0;
-    max-height: 0;
+  }
+}
+
+@-webkit-keyframes fadeInAccord {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInAccord {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeOutAccord {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fadeOutAccord {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes h5Style {
+  from {
+    display: none;
+    -webkit-transform: translateY(35px);
+            transform: translateY(35px);
+  }
+  to {
+    display: -webkit-box;
+    display: flex;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes h5Style {
+  from {
+    display: none;
+    -webkit-transform: translateY(35px);
+            transform: translateY(35px);
+  }
+  to {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes widthImg {
+  from {
+    width: 90px;
+  }
+  to {
+    width: 42px;
+  }
+}
+
+@keyframes widthImg {
+  from {
+    width: 90px;
+  }
+  to {
+    width: 42px;
+  }
+}
+
+@-webkit-keyframes FadeOutwidthImg {
+  from {
+    width: 42px;
+  }
+  to {
+    width: 42px;
+  }
+}
+
+@keyframes FadeOutwidthImg {
+  from {
+    width: 42px;
+  }
+  to {
+    width: 42px;
+  }
+}
+
+@-webkit-keyframes FadeOuth5Style {
+  from {
+    display: -webkit-box;
+    display: flex;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    display: none;
+    -webkit-transform: translateY(35px);
+            transform: translateY(35px);
+  }
+}
+
+@keyframes FadeOuth5Style {
+  from {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+  to {
+    display: none;
+    -webkit-transform: translateY(35px);
+            transform: translateY(35px);
   }
 }
 
 .content {
-  width: 900px;
+  width: 100%;
   -webkit-transition: opacity 0.5s ease-in, width 1.5s ease-out;
   transition: opacity 0.5s ease-in, width 1.5s ease-out;
 }
 
 @media (min-width: 1200px) {
   .content {
+    width: 1135px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -86,8 +209,8 @@
 
 @media (min-width: 1200px) {
   .content .panel {
-    width: 69.1%;
-    margin-top: 8%;
+    width: 1083px;
+    margin-top: 104px;
   }
 }
 
@@ -99,7 +222,7 @@
 
 @media (min-width: 2144px) {
   .content .panel {
-    margin-top: 4.3%;
+    margin-top: 100px;
   }
 }
 
@@ -136,7 +259,7 @@
   color: #2e9788;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .content .panel h1 {
     font-size: 100%;
   }
@@ -154,7 +277,7 @@
           align-items: center;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .content .panel-body {
     overflow: hidden;
     overflow-y: auto;
@@ -176,7 +299,7 @@
   width: 110px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .content .panel-body .tabs {
     width: 70px;
   }
@@ -200,7 +323,7 @@
   border: none !important;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .content .panel-body .tabs .tabsLinks {
     width: 160%;
   }
@@ -211,7 +334,7 @@
   margin-left: 10%;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .content .panel-body .contents {
     height: 175px;
     overflow: hidden;
@@ -223,7 +346,7 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .content .panel-body .contents {
     margin-left: 19%;
   }
@@ -240,7 +363,7 @@
   width: 240px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .content .panel-body .contents-right img {
     width: 150px;
   }
@@ -339,31 +462,19 @@
   }
 }
 
-@media (max-width: 1765px) {
-  .content .accord-icon {
-    padding: 18%;
-  }
-}
-
-@media (max-width: 1600px) {
-  .content .accord-icon {
-    padding: 14%;
-  }
-}
-
 @media (max-width: 1500px) {
   .content .accord-icon {
-    padding: 10%;
+    padding: 3px;
   }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1025px) {
   .content .accord-icon {
     padding: 2%;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1025px) {
   .content .accord-icon:hover {
     padding-right: 4%;
     padding-left: 4%;
@@ -372,8 +483,8 @@
 
 @media (min-width: 1200px) {
   .content .accord-icon:hover {
-    padding-top: 30%;
-    padding-bottom: 30%;
+    padding-top: 50%;
+    padding-bottom: 50%;
     cursor: pointer;
   }
 }
@@ -400,6 +511,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-transform: translateY(35px);
+          transform: translateY(35px);
 }
 
 .content .accord-title {
@@ -441,18 +554,57 @@
 
 .disaleHover:hover {
   padding-top: 0% !important;
-  padding-bottom: 30% !important;
+  padding-bottom: 0% !important;
 }
 
 .fadeIn {
-  display: block;
-  -webkit-animation: fadeIn 1s;
-          animation: fadeIn 1s;
+  -webkit-animation: fadeIn 0.4s;
+          animation: fadeIn 0.4s;
+  opacity: 1;
 }
 
 .fadeOut {
-  display: block;
-  -webkit-animation: fadeIn 1s;
-          animation: fadeIn 1s;
+  opacity: 0;
+  -webkit-animation: fadeOut 0.4s;
+          animation: fadeOut 0.4s;
+}
+
+.animateAccordHide {
+  -webkit-animation: fadeOutAccord 0.1s;
+          animation: fadeOutAccord 0.1s;
+}
+
+.animateAccordDisplay {
+  -webkit-animation: fadeInAccord 0.3s;
+          animation: fadeInAccord 0.3s;
+}
+
+@media (min-width: 1200px) {
+  .accord-icon:hover ~ .accord-title {
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    -webkit-transform: rotate(-180deg) translateY(-35px);
+            transform: rotate(-180deg) translateY(-35px);
+  }
+}
+
+.h5Style {
+  -webkit-animation: h5Style 1.5s;
+          animation: h5Style 1.5s;
+}
+
+.Outh5Style {
+  -webkit-animation: FadeOuth5Style 1s;
+          animation: FadeOuth5Style 1s;
+}
+
+.animwidthImg {
+  -webkit-animation: widthImg 0.4s;
+          animation: widthImg 0.4s;
+}
+
+.OutwidthImg {
+  -webkit-animation: FadeOutwidthImg 0.6s;
+          animation: FadeOutwidthImg 0.6s;
 }
 /*# sourceMappingURL=main.css.map */
