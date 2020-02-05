@@ -8,107 +8,105 @@ body {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        // max-height: 0;
-        // width: 0;
     }
     to {
         opacity: 1;
-        // max-height: 365px;
-        // width: 1050px;
     }
 }
 
 @keyframes fadeOut {
     from {
         opacity: 1;
-        // max-height: 365px;
-        // width: 1050px;
     }
     to {
         opacity: 0;
-        // max-height: 0;
-        // width: 0;
     }
 }
 
 @keyframes fadeInAccord {
     from {
         opacity: 1;
-        // background: none;
-        // max-height: 100px;
-        // width: 0;
-        // margin-top: 0%;
     }
     to {
         opacity: 1;
-        // background: #2e9788;
-        // max-height: 365px;
-        // width: 1050px;
-        // margin-top: 1%;
     }
 }
 
 @keyframes fadeOutAccord {
     from {
         opacity: 1;
-        // background: #2e9788;
-        // max-height: 442px;
-        // margin-top: 1%;
-        // width: 1050px;
     }
     to {
         opacity: 0;
-        // background: none;
-        // max-height: 100px;
-        // margin-top: 0%;
-        // width: 0;
     }
 }
 
 @keyframes h5Style {
-    from {
+    0% {
+        -moz-transform: translateY(40px);
+        transform: translateY(40px);
+        opacity: 0;
         display: none;
-        transform: translateY(35px);
     }
-    to {
-        display: flex;
+    50% {
+        -moz-transform: translateY(20px);
+        transform: translateY(20px);
+        opacity: 0.2;
+    }
+    100% {
+        -moz-transform: translateY(0px);
         transform: translateY(0px);
+        opacity: 1;
     }
 }
 
 @keyframes widthImg {
-    from {
-        width: 42px;
+    0% {
+        width: 40px;
     }
-    to {
+    25% {
+        width: 38px;
+    }
+    75% {
+        width: 34px;
+    }
+    100% {
         width: 30px;
     }
 }
 
 @keyframes FadeOutwidthImg {
-    from {
-        width: 42px;
+    0% {
+        width: 30px;
     }
-    to {
-        width: 42px;
+    25% {
+        width: 34px;
+    }
+    75% {
+        width: 38px;
+    }
+    100% {
+        width: 40px;
     }
 }
 
 @keyframes FadeOuth5Style {
     from {
         display: flex;
+        -moz-transform: translateY(0px);
         transform: translateY(0px);
     }
     to {
         display: none;
+        -moz-transform: translateY(35px);
         transform: translateY(35px);
     }
 }
 
 .content {
     width: 100%;
-    transition: opacity 0.5s ease-in, width 1.5s ease-out;
     @media (min-width: 1200px) {
+        transition: opacity 0.5s ease-in, width 1.5s ease-out;
         width: 1135px;
         display: flex;
         justify-content: center;
@@ -120,13 +118,14 @@ body {
         overflow: hidden;
         border: 4px solid #2e9788;
         height: 100%;
-        transition: all 0.3s ease-in;
-        width: 90%;
+        width: 80%;
         margin: auto;
         margin-top: 4.1%;
+        transition: all 0.1s ease-in;
         @media (min-width: 1200px) {
-            width: 1083px;
-            margin-top: 104px;
+            width: 1070px;
+            margin-top: 100px;
+            z-index: 10;
         }
         @media (min-width: 2159px) {
             margin-top: 4.2%;
@@ -147,12 +146,18 @@ body {
                 width: 100%;
                 display: flex;
                 justify-content: flex-end;
-                transition: max-height 0.2s ease-out;
+                @media (min-width: 1200px) {
+                    transition: max-height 0.2s ease-out;
+                    width: 3%;
+                }
+                &:hover{
+                    cursor: pointer;
+                }
             }
         }
         h1 {
             color: #2e9788;
-            @media (max-width: 1025px) {
+            @media (max-width: 1024px) {
                 font-size: 100%;
             }
         }
@@ -160,18 +165,17 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            @media (max-width: 1025px) {
+            @media (max-width: 1024px) {
                 overflow: hidden;
                 overflow-y: auto;
             }
             .tabs {
                 display: flex;
                 flex-direction: column;
-                // padding-right: 5%;
                 margin-bottom: 10%;
                 flex: 1;
                 width: 110px;
-                @media (max-width: 1025px) {
+                @media (max-width: 1024px) {
                     width: 70px;
                 }
                 .tabsLinks {
@@ -188,7 +192,11 @@ body {
                     &:last-child {
                         border: none !important;
                     }
-                    @media (max-width: 1025px) {
+                    &:hover{
+                        background: #2e9788;
+                        color: #fff;
+                    }
+                    @media (max-width: 1024px) {
                         width: 160%;
                     }
                 }
@@ -196,13 +204,14 @@ body {
             .contents {
                 display: none;
                 margin-left: 10%;
-                @media (max-width: 1025px) {
+                transition: all 3s ease-in;
+                @media (max-width: 1024px) {
                     height: 175px;
                     overflow: hidden;
                     overflow-y: auto;
                     flex-direction: column;
                 }
-                @media (max-width: 1025px) {
+                @media (max-width: 1024px) {
                     margin-left: 19%;
                 }
                 &-right {
@@ -210,7 +219,7 @@ body {
                     margin-left: 5%;
                     img {
                         width: 240px;
-                        @media (max-width: 1025px) {
+                        @media (max-width: 1024px) {
                             width: 150px;
                         }
                     }
@@ -246,34 +255,48 @@ body {
         border: none;
         max-height: 442px;
         @media (min-width: 1200px) {
+            transition: all 0.6s ease-in-out;
             flex-direction: column;
             height: 170%;
-            // width: 3.7%;
             width: 121px;
             justify-content: flex-start;
+        }
+        &:hover {
+            cursor: pointer;
+            .accord-icon {
+                cursor: pointer;
+                @media (min-width: 1200px) {
+                    transition: all 0.5s ease-in-out;
+                    padding-top: 50%;
+                    padding-bottom: 50%;
+                }
+            }
+            .accord-title {
+                @media (min-width: 1200px) {
+                    transition: all 0.4s ease-in-out;
+                    -moz-transform: rotate(-180deg) translateY(-22px);
+                    transform: rotate(-180deg) translateY(-22px);
+                }
+            }
         }
         &-icon {
             @media (min-width: 1200px) {
                 padding: 19%;
-                padding-top: 0%;
-                padding-bottom: 12%;
+                padding-top: 17px;
+                padding-bottom: 30px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 color: #fff;
                 justify-content: flex-end;
                 width: 100%;
+                height: 100px;
+                transition: all 0.2s ease-in-out;
             }
-            // @media (max-width: 1765px) {
-            //     padding: 3px;
-            // }
-            // @media (max-width: 1600px) {
-            //     padding: 3px;
-            // }
             @media (max-width: 1500px) {
                 padding: 3px;
             }
-            @media (max-width: 1025px) {
+            @media (max-width: 1024px) {
                 padding: 2%;
             }
             flex: 0.4;
@@ -283,25 +306,10 @@ body {
             padding: 4%;
             padding-right: 0%;
             padding-left: 0%;
-            transition: linear 0.1s;
             border: none;
             outline: none;
-            &:hover {
-                @media (max-width: 1025px) {
-                    padding-right: 4%;
-                    padding-left: 4%;
-                }
-                @media (min-width: 1200px) {
-                    padding-top: 50%;
-                    padding-bottom: 50%;
-                    cursor: pointer;
-                }
-            }
             img {
                 width: 50px;
-                @media (min-width: 1200px) {
-                    width: 42px;
-                }
                 @media (max-width: 360px) {
                     width: 30px;
                 }
@@ -310,7 +318,8 @@ body {
                 display: none;
                 width: 10%;
                 justify-content: center;
-                transform: translateY(35px);
+                -moz-transform: translateY(40px);
+                transform: translateY(40px);
             }
         }
         &-title {
@@ -322,6 +331,7 @@ body {
                 display: flex;
                 writing-mode: vertical-lr;
                 direction: ltr;
+                -moz-transform: rotate(-180deg);
                 transform: rotate(-180deg);
                 justify-content: flex-end;
                 margin-top: 20%;
@@ -335,54 +345,107 @@ body {
     }
 }
 
-.active {
-    background: #2e9788;
-}
+@media (min-width: 1200px) {
+    .active {
+        background: #2e9788;
+    }
 
-.disaleHover:hover {
-    padding-top: 0% !important;
-    padding-bottom: 0% !important;
-}
+    .disaleHover{
+        transition: all 0.3s ease-in;
+    }
 
-.fadeIn {
-    // display: block;
-    animation: fadeIn 0.4s;
-    opacity: 1;
-}
+    .disaleHover:hover {
+        padding-top: 30% !important;
+        padding-bottom: 103% !important;
+    }
 
-.fadeOut {
-    opacity: 0;
-    animation: fadeOut 0.4s;
-    // display: none;
-}
+    .fadeIn {
+        animation: fadeIn 0.4s;
+        opacity: 1;
+    }
 
-.animateAccordHide{
-    animation: fadeOutAccord 0.1s;
-}
+    .fadeOut {
+        opacity: 0;
+        animation: fadeOut 0.4s;
+    }
 
-.animateAccordDisplay{
-    animation: fadeInAccord 0.3s;
-}
+    .animateAccordHide{
+        animation: fadeOutAccord 0.1s;
+    }
 
-.accord-icon:hover ~ .accord-title {
-    @media (min-width: 1200px) {
-        transition: all 0.4s ease-in-out;
-        transform: rotate(-180deg) translateY(-35px);
+    .animateAccordDisplay{
+        animation: fadeInAccord 0.3s;
+    }
+
+    .h5Style{
+        transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+        transform: translateY(0px) !important;
+        animation: h5Style 0.4s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+        -moz-transform: translateY(0px) !important;
+        display: flex !important;
+        margin: 0;
+        padding-top: 20%;
+    }
+
+    .Outh5Style {
+        transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+        animation: FadeOuth5Style 0.4s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+        -moz-transform: translateY(35px);
+        transform: translateY(35px);
+        display: none !important;
+        margin-top: -70%;
+    }
+
+    .animwidthImg{
+        transition: all 10s ease;
+        animation: widthImg 0.5s ease;
+        width: 30px !important;
+    }
+
+    .OutwidthImg{
+        transition: all 10s ease;
+        animation: FadeOutwidthImg 0.5s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+        width: 40px !important;
     }
 }
 
-.h5Style{
-    animation: h5Style 1.5s;
-}
-
-.Outh5Style {
-    animation: FadeOuth5Style 1s;
-}
-
-.animwidthImg{
-    animation: widthImg 0.4s;
-}
-
-.OutwidthImg{
-    animation: FadeOutwidthImg 0.6s;
+@-moz-document url-prefix() {
+    .OutwidthImg{
+        transition: all 0.4s ease;
+    }
+    .animwidthImg{
+        transition: all 2.5s ease;
+        animation: widthImg 0.5s ease-in-out;
+    }
+    .content{
+        .accord {
+            height: 900px;
+            span {
+                font-size: 95%;
+            }
+            &:hover {
+                .accord-title {
+                    -webkit-transition: all 0.4s ease-in-out;
+                    transition: all 0.4s ease-in-out;
+                    -webkit-transform: rotate(-180deg) translateY(-22px);
+                    transform: rotate(-180deg) translateY(-8px);
+                }
+            } 
+        }
+        .panel {
+            @media (min-width: 1200px) {
+                margin-top: 115px;
+            }
+            .panel-body {
+                .tabs {
+                    .tabsLinks{
+                        padding: 10%;
+                    }
+                }
+            }
+        }
+    }
+    .disaleHover:hover {
+        padding-top: 14.3% !important;
+    }
 }

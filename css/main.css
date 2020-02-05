@@ -82,67 +82,100 @@
 }
 
 @-webkit-keyframes h5Style {
-  from {
+  0% {
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+    opacity: 0;
     display: none;
-    -webkit-transform: translateY(35px);
-            transform: translateY(35px);
   }
-  to {
-    display: -webkit-box;
-    display: flex;
+  50% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0.2;
+  }
+  100% {
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
+    opacity: 1;
   }
 }
 
 @keyframes h5Style {
-  from {
+  0% {
+    -webkit-transform: translateY(40px);
+            transform: translateY(40px);
+    opacity: 0;
     display: none;
-    -webkit-transform: translateY(35px);
-            transform: translateY(35px);
   }
-  to {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
+  50% {
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+    opacity: 0.2;
+  }
+  100% {
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
+    opacity: 1;
   }
 }
 
 @-webkit-keyframes widthImg {
-  from {
-    width: 42px;
+  0% {
+    width: 40px;
   }
-  to {
+  25% {
+    width: 38px;
+  }
+  75% {
+    width: 34px;
+  }
+  100% {
     width: 30px;
   }
 }
 
 @keyframes widthImg {
-  from {
-    width: 42px;
+  0% {
+    width: 40px;
   }
-  to {
+  25% {
+    width: 38px;
+  }
+  75% {
+    width: 34px;
+  }
+  100% {
     width: 30px;
   }
 }
 
 @-webkit-keyframes FadeOutwidthImg {
-  from {
-    width: 42px;
+  0% {
+    width: 30px;
   }
-  to {
-    width: 42px;
+  25% {
+    width: 34px;
+  }
+  75% {
+    width: 38px;
+  }
+  100% {
+    width: 40px;
   }
 }
 
 @keyframes FadeOutwidthImg {
-  from {
-    width: 42px;
+  0% {
+    width: 30px;
   }
-  to {
-    width: 42px;
+  25% {
+    width: 34px;
+  }
+  75% {
+    width: 38px;
+  }
+  100% {
+    width: 40px;
   }
 }
 
@@ -177,12 +210,12 @@
 
 .content {
   width: 100%;
-  -webkit-transition: opacity 0.5s ease-in, width 1.5s ease-out;
-  transition: opacity 0.5s ease-in, width 1.5s ease-out;
 }
 
 @media (min-width: 1200px) {
   .content {
+    -webkit-transition: opacity 0.5s ease-in, width 1.5s ease-out;
+    transition: opacity 0.5s ease-in, width 1.5s ease-out;
     width: 1135px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -200,17 +233,18 @@
   overflow: hidden;
   border: 4px solid #2e9788;
   height: 100%;
-  -webkit-transition: all 0.3s ease-in;
-  transition: all 0.3s ease-in;
-  width: 90%;
+  width: 80%;
   margin: auto;
   margin-top: 4.1%;
+  -webkit-transition: all 0.1s ease-in;
+  transition: all 0.1s ease-in;
 }
 
 @media (min-width: 1200px) {
   .content .panel {
-    width: 1083px;
-    margin-top: 104px;
+    width: 1070px;
+    margin-top: 100px;
+    z-index: 10;
   }
 }
 
@@ -251,15 +285,25 @@
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  -webkit-transition: max-height 0.2s ease-out;
-  transition: max-height 0.2s ease-out;
+}
+
+@media (min-width: 1200px) {
+  .content .panel-env button {
+    -webkit-transition: max-height 0.2s ease-out;
+    transition: max-height 0.2s ease-out;
+    width: 3%;
+  }
+}
+
+.content .panel-env button:hover {
+  cursor: pointer;
 }
 
 .content .panel h1 {
   color: #2e9788;
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
   .content .panel h1 {
     font-size: 100%;
   }
@@ -277,7 +321,7 @@
           align-items: center;
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
   .content .panel-body {
     overflow: hidden;
     overflow-y: auto;
@@ -299,7 +343,7 @@
   width: 110px;
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
   .content .panel-body .tabs {
     width: 70px;
   }
@@ -323,7 +367,12 @@
   border: none !important;
 }
 
-@media (max-width: 1025px) {
+.content .panel-body .tabs .tabsLinks:hover {
+  background: #2e9788;
+  color: #fff;
+}
+
+@media (max-width: 1024px) {
   .content .panel-body .tabs .tabsLinks {
     width: 160%;
   }
@@ -332,9 +381,11 @@
 .content .panel-body .contents {
   display: none;
   margin-left: 10%;
+  -webkit-transition: all 3s ease-in;
+  transition: all 3s ease-in;
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
   .content .panel-body .contents {
     height: 175px;
     overflow: hidden;
@@ -346,7 +397,7 @@
   }
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
   .content .panel-body .contents {
     margin-left: 19%;
   }
@@ -363,7 +414,7 @@
   width: 240px;
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
   .content .panel-body .contents-right img {
     width: 150px;
   }
@@ -407,6 +458,8 @@
 
 @media (min-width: 1200px) {
   .content .accord {
+    -webkit-transition: all 0.6s ease-in-out;
+    transition: all 0.6s ease-in-out;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -416,6 +469,32 @@
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+  }
+}
+
+.content .accord:hover {
+  cursor: pointer;
+}
+
+.content .accord:hover .accord-icon {
+  cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+  .content .accord:hover .accord-icon {
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    padding-top: 50%;
+    padding-bottom: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .content .accord:hover .accord-title {
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    -webkit-transform: rotate(-180deg) translateY(-22px);
+            transform: rotate(-180deg) translateY(-22px);
   }
 }
 
@@ -433,8 +512,6 @@
   padding: 4%;
   padding-right: 0%;
   padding-left: 0%;
-  -webkit-transition: linear 0.1s;
-  transition: linear 0.1s;
   border: none;
   outline: none;
 }
@@ -442,8 +519,8 @@
 @media (min-width: 1200px) {
   .content .accord-icon {
     padding: 19%;
-    padding-top: 0%;
-    padding-bottom: 12%;
+    padding-top: 17px;
+    padding-bottom: 30px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -459,6 +536,9 @@
         -ms-flex-pack: end;
             justify-content: flex-end;
     width: 100%;
+    height: 100px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
   }
 }
 
@@ -468,35 +548,14 @@
   }
 }
 
-@media (max-width: 1025px) {
+@media (max-width: 1024px) {
   .content .accord-icon {
     padding: 2%;
   }
 }
 
-@media (max-width: 1025px) {
-  .content .accord-icon:hover {
-    padding-right: 4%;
-    padding-left: 4%;
-  }
-}
-
-@media (min-width: 1200px) {
-  .content .accord-icon:hover {
-    padding-top: 50%;
-    padding-bottom: 50%;
-    cursor: pointer;
-  }
-}
-
 .content .accord-icon img {
   width: 50px;
-}
-
-@media (min-width: 1200px) {
-  .content .accord-icon img {
-    width: 42px;
-  }
 }
 
 @media (max-width: 360px) {
@@ -511,8 +570,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-transform: translateY(35px);
-          transform: translateY(35px);
+  -webkit-transform: translateY(40px);
+          transform: translateY(40px);
 }
 
 .content .accord-title {
@@ -548,63 +607,108 @@
   font-weight: bold;
 }
 
-.active {
-  background: #2e9788;
-}
-
-.disaleHover:hover {
-  padding-top: 0% !important;
-  padding-bottom: 0% !important;
-}
-
-.fadeIn {
-  -webkit-animation: fadeIn 0.4s;
-          animation: fadeIn 0.4s;
-  opacity: 1;
-}
-
-.fadeOut {
-  opacity: 0;
-  -webkit-animation: fadeOut 0.4s;
-          animation: fadeOut 0.4s;
-}
-
-.animateAccordHide {
-  -webkit-animation: fadeOutAccord 0.1s;
-          animation: fadeOutAccord 0.1s;
-}
-
-.animateAccordDisplay {
-  -webkit-animation: fadeInAccord 0.3s;
-          animation: fadeInAccord 0.3s;
-}
-
 @media (min-width: 1200px) {
-  .accord-icon:hover ~ .accord-title {
-    -webkit-transition: all 0.4s ease-in-out;
-    transition: all 0.4s ease-in-out;
-    -webkit-transform: rotate(-180deg) translateY(-35px);
-            transform: rotate(-180deg) translateY(-35px);
+  .active {
+    background: #2e9788;
+  }
+  .disaleHover {
+    -webkit-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+  }
+  .disaleHover:hover {
+    padding-top: 30% !important;
+    padding-bottom: 103% !important;
+  }
+  .fadeIn {
+    -webkit-animation: fadeIn 0.4s;
+            animation: fadeIn 0.4s;
+    opacity: 1;
+  }
+  .fadeOut {
+    opacity: 0;
+    -webkit-animation: fadeOut 0.4s;
+            animation: fadeOut 0.4s;
+  }
+  .animateAccordHide {
+    -webkit-animation: fadeOutAccord 0.1s;
+            animation: fadeOutAccord 0.1s;
+  }
+  .animateAccordDisplay {
+    -webkit-animation: fadeInAccord 0.3s;
+            animation: fadeInAccord 0.3s;
+  }
+  .h5Style {
+    -webkit-transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+    transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+    -webkit-transform: translateY(0px) !important;
+            transform: translateY(0px) !important;
+    -webkit-animation: h5Style 0.4s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+            animation: h5Style 0.4s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+    -moz-transform: translateY(0px) !important;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    margin: 0;
+    padding-top: 20%;
+  }
+  .Outh5Style {
+    -webkit-transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+    transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+    -webkit-animation: FadeOuth5Style 0.4s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+            animation: FadeOuth5Style 0.4s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+    -webkit-transform: translateY(35px);
+            transform: translateY(35px);
+    display: none !important;
+    margin-top: -70%;
+  }
+  .animwidthImg {
+    -webkit-transition: all 10s ease;
+    transition: all 10s ease;
+    -webkit-animation: widthImg 0.5s ease;
+            animation: widthImg 0.5s ease;
+    width: 30px !important;
+  }
+  .OutwidthImg {
+    -webkit-transition: all 10s ease;
+    transition: all 10s ease;
+    -webkit-animation: FadeOutwidthImg 0.5s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+            animation: FadeOutwidthImg 0.5s cubic-bezier(0.55, 0.06, 0.68, 0.19);
+    width: 40px !important;
   }
 }
 
-.h5Style {
-  -webkit-animation: h5Style 1.5s;
-          animation: h5Style 1.5s;
-}
-
-.Outh5Style {
-  -webkit-animation: FadeOuth5Style 1s;
-          animation: FadeOuth5Style 1s;
-}
-
-.animwidthImg {
-  -webkit-animation: widthImg 0.4s;
-          animation: widthImg 0.4s;
-}
-
-.OutwidthImg {
-  -webkit-animation: FadeOutwidthImg 0.6s;
-          animation: FadeOutwidthImg 0.6s;
+@-moz-document url-prefix() {
+  .OutwidthImg {
+    -webkit-transition: all 0.4s ease;
+    transition: all 0.4s ease;
+  }
+  .animwidthImg {
+    -webkit-transition: all 2.5s ease;
+    transition: all 2.5s ease;
+    animation: widthImg 0.5s ease-in-out;
+  }
+  .content .accord {
+    height: 900px;
+  }
+  .content .accord span {
+    font-size: 95%;
+  }
+  .content .accord:hover .accord-title {
+    -webkit-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    -webkit-transform: rotate(-180deg) translateY(-22px);
+    transform: rotate(-180deg) translateY(-8px);
+  }
+  @media (min-width: 1200px) {
+    .content .panel {
+      margin-top: 115px;
+    }
+  }
+  .content .panel .panel-body .tabs .tabsLinks {
+    padding: 10%;
+  }
+  .disaleHover:hover {
+    padding-top: 14.3% !important;
+  }
 }
 /*# sourceMappingURL=main.css.map */
