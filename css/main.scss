@@ -1,3 +1,4 @@
+$attrelmenet: var(--mouse-y) - 300;
 body {
     @media (min-width: 1200px) {
         display: flex;
@@ -16,7 +17,7 @@ body {
 
 @keyframes transfor {
     from {
-        transform: translateY(var(--mouse-y) - 300);
+        transform: translateY(-10px);
         // opacity: 0.5;
     }
     to {

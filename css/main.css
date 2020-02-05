@@ -29,8 +29,8 @@
 
 @-webkit-keyframes transfor {
   from {
-    -webkit-transform: translateY(var(--mouse-y)-300);
-            transform: translateY(var(--mouse-y)-300);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
   to {
     -webkit-transform: translateY(attr(data-before));
@@ -40,8 +40,8 @@
 
 @keyframes transfor {
   from {
-    -webkit-transform: translateY(var(--mouse-y)-300);
-            transform: translateY(var(--mouse-y)-300);
+    -webkit-transform: translateY(-10px);
+            transform: translateY(-10px);
   }
   to {
     -webkit-transform: translateY(attr(data-before));
