@@ -52,8 +52,7 @@ function displayPanel(j){
 function WidthChange (mq){
     for (let i = 0; i < acc.length; i++) {
         document.getElementById("tab1").style.display = "flex";
-        if (mq.matches) {
-            acc[i].nextElementSibling.style.display = 'none';
+        if (mq.matches) {            acc[i].nextElementSibling.style.display = 'none';
             acc[i].addEventListener("click", function() {
                 tabsLinks[0].click();
                 const panel = this.nextElementSibling;

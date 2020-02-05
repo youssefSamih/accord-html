@@ -383,6 +383,8 @@
   margin-left: 10%;
   -webkit-transition: all 3s ease-in;
   transition: all 3s ease-in;
+  -webkit-animation: fadeIn 0.4s ease-in;
+          animation: fadeIn 0.4s ease-in;
 }
 
 @media (max-width: 1024px) {
@@ -573,6 +575,12 @@
           transform: translateY(40px);
 }
 
+@media (max-width: 1024px) {
+  .content .accord-icon h5 {
+    display: none;
+  }
+}
+
 .content .accord-title {
   -webkit-box-flex: 2;
       -ms-flex: 2;
@@ -662,9 +670,6 @@
     display: flex;
     margin-top: -70%;
   }
-  .displayOuth5Style {
-    display: none;
-  }
   .animwidthImg {
     -webkit-transition: all 10s ease;
     transition: all 10s ease;
@@ -679,6 +684,10 @@
             animation: FadeOutwidthImg 0.5s cubic-bezier(0.55, 0.06, 0.68, 0.19);
     width: 40px !important;
   }
+}
+
+.displayOuth5Style {
+  display: none;
 }
 
 @-moz-document url-prefix() {

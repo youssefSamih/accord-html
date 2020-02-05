@@ -205,6 +205,7 @@ body {
                 display: none;
                 margin-left: 10%;
                 transition: all 3s ease-in;
+                animation: fadeIn 0.4s ease-in;
                 @media (max-width: 1024px) {
                     height: 175px;
                     overflow: hidden;
@@ -315,7 +316,9 @@ body {
                 }
             }
             h5 {
-                // display: none;
+                @media (max-width: 1024px) {
+                    display: none;
+                }
                 width: 10%;
                 justify-content: center;
                 -moz-transform: translateY(40px);
@@ -387,9 +390,6 @@ body {
         display: flex;
         margin-top: -70%;
     }
-    .displayOuth5Style {
-        display: none;
-    }
     .animwidthImg {
         transition: all 10s ease;
         animation: widthImg 0.5s ease;
@@ -400,6 +400,10 @@ body {
         animation: FadeOutwidthImg 0.5s cubic-bezier(0.55, 0.06, 0.68, 0.19);
         width: 40px !important;
     }
+}
+
+.displayOuth5Style {
+    display: none;
 }
 
 @-moz-document url-prefix() {
