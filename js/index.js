@@ -20,8 +20,15 @@ function slideDown(target){
   function displayTabs (tabsLinks, e){
     for (let i = 0; i < tabsLinks.length; i++) {
         tabsLinks[i].removeAttribute('style');
+        tabsLinks[i].setAttribute('class', 'tabsLinks');
     }
-    e.target.setAttribute('style', 'background : #2e9788; color: #fff');
+    document.addEventListener('mousemove', evt => {
+        var y = evt.clientY / innerHeight;
+        document.documentElement.style.setProperty('--mouse-y', y - 10);
+    });
+    let topOffset = e.target.offsetTop - 50 < 0 ? 0 : e.target.offsetTop - 5 ;
+    e.target.setAttribute('class', 'tabsLinks background');
+    e.target.setAttribute('data-before', topOffset+'px');
     let tabName = e.target.getAttribute('value');
     let tabcontent;
     tabcontent = document.getElementsByClassName("contents");
@@ -52,13 +59,17 @@ function displayPanel(j){
 function WidthChange (mq){
     for (let i = 0; i < acc.length; i++) {
         document.getElementById("tab1").style.display = "flex";
-        if (mq.matches) {            acc[i].nextElementSibling.style.display = 'none';
+        if (mq.matches) {
+            acc[i].nextElementSibling.style.display = 'none';
             acc[i].addEventListener("click", function() {
                 tabsLinks[0].click();
                 const panel = this.nextElementSibling;
                 for (let j = 0; j < acc.length; j++) {
                     const panel = acc[j].nextElementSibling;
                     panel.style.display = "none";
+                    if(panel.childNodes[3]){
+                        panel.childNodes[3].childNodes[1].childNodes[1].classList.remove('background');
+                    }
                     if (panel.style.maxHeight) {
                         panel.style.maxHeight = null;
                     }
@@ -82,7 +93,6 @@ function WidthChange (mq){
             acc[i].addEventListener("click", function(e) {
                 clicked = false;
                 tabsLinks[0].click();
-                console.log(clicked);
                 const panel = this.nextElementSibling;
                 e.target.setAttribute('style', 'color: #fff');
                 for (let j = 0; j < acc.length; j++) {
@@ -170,7 +180,6 @@ function WidthChange (mq){
             acc[i].childNodes[1].classList.remove('disaleHover');
             acc[i].childNodes[1].removeAttribute('style');
             acc[i].childNodes[1].childNodes[1].removeAttribute('class');
-            // acc[i].childNodes[1].childNodes[3].removeAttribute('style');
             acc[i].childNodes[1].childNodes[1].classList.add('OutwidthImg');
             acc[i].nextElementSibling.removeAttribute('style');
             acc[i].nextElementSibling.setAttribute('style', 'display: none');
@@ -184,6 +193,10 @@ function WidthChange (mq){
         tabsLinks[i].addEventListener('click', function(e){
             for (let i = 0; i < acc.length; i++) {
                 acc[i].nextElementSibling.classList.remove('fadeOut');
+                // acc[i].classList.remove('background');
+                if(acc[i].nextElementSibling.childNodes[3]){
+                    acc[i].nextElementSibling.childNodes[3].childNodes[1].childNodes[1].classList.remove('background');
+                }
             }
             displayTabs(tabsLinks, e);
         })

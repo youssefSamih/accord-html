@@ -14,6 +14,16 @@ body {
     }
 }
 
+@keyframes transfor {
+    from {
+        transform: translateY(var(--mouse-y) - 300);
+        // opacity: 0.5;
+    }
+    to {
+        transform: translateY(attr(data-before));
+    }
+}
+
 @keyframes fadeOut {
     from {
         opacity: 1;
@@ -175,6 +185,7 @@ body {
                 margin-bottom: 10%;
                 flex: 1;
                 width: 110px;
+                transition: all 0.3s ease-in-out;
                 @media (max-width: 1024px) {
                     width: 70px;
                 }
@@ -192,10 +203,10 @@ body {
                     &:last-child {
                         border: none !important;
                     }
-                    &:hover {
-                        background: #2e9788;
-                        color: #fff;
-                    }
+                    // &:hover {
+                    //     background: #2e9788;
+                    //     color: #fff;
+                    // }
                     @media (max-width: 1024px) {
                         width: 160%;
                     }
@@ -346,6 +357,25 @@ body {
             font-weight: bold;
         }
     }
+}
+
+.background {
+    color: #fff !important;
+}
+
+.background::before {
+    content: "";
+    background: #2e9788;
+    width: 20%;
+    height: 13%;
+    position: absolute;
+    left: 1%;
+    // top: attr(data-before);
+    z-index: -1;
+    margin-top: -1.5%;
+    animation: transfor 0.3s;
+    transition: transform 100s;
+    transform: translateY(attr(data-before));
 }
 
 @media (min-width: 1200px) {
