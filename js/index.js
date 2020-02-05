@@ -77,6 +77,9 @@ function WidthChange (mq){
             acc[2].childNodes[1].childNodes[1].style.width = "28px";
             acc[i].classList.remove('animateAccordDisplay');
             acc[i].classList.remove('animateAccordHide');
+            setTimeout(function(){
+                acc[i].childNodes[1].childNodes[3].classList.add('displayOuth5Style');
+            }, 30);
             acc[i].addEventListener("click", function(e) {
                 clicked = false;
                 tabsLinks[0].click();
@@ -91,10 +94,10 @@ function WidthChange (mq){
                         acc[j].childNodes[1].childNodes[3].style.display = "flex";
                         acc[j].childNodes[3].style.opacity = '0';
                         acc[j].childNodes[1].childNodes[3].classList.add('h5Style');
+                        acc[i].childNodes[1].childNodes[3].classList.remove('displayOuth5Style');
                         acc[j].childNodes[1].style.paddingTop = "41px"
                         acc[j].childNodes[1].childNodes[3].classList.remove('Outh5Style');
                     }
-                    // acc[j].classList.add('disaleHover');
                     acc[j].childNodes[1].classList.add('disaleHover');
                     const panel = acc[j].nextElementSibling;
                     if(j === 2) {
@@ -157,7 +160,6 @@ function WidthChange (mq){
         clicked = false;
         for (let i = 0; i < acc.length; i++) {
             acc[i].childNodes[1].childNodes[3].classList.add('Outh5Style');
-            // acc[i].nextElementSibling.classList.add('fadeOut');
             acc[i].classList.remove('animateAccordDisplay');
             acc[i].childNodes[1].childNodes[3].style.transform="translateY(35px)";
             acc[i].nextElementSibling.classList.remove('fadeIn');
@@ -169,10 +171,14 @@ function WidthChange (mq){
             acc[i].childNodes[1].classList.remove('disaleHover');
             acc[i].childNodes[1].removeAttribute('style');
             acc[i].childNodes[1].childNodes[1].removeAttribute('class');
-            acc[i].childNodes[1].childNodes[3].removeAttribute('style');
+            // acc[i].childNodes[1].childNodes[3].removeAttribute('style');
             acc[i].childNodes[1].childNodes[1].classList.add('OutwidthImg');
             acc[i].nextElementSibling.removeAttribute('style');
             acc[i].nextElementSibling.setAttribute('style', 'display: none');
+            acc[i].childNodes[1].childNodes[3].classList.remove('displayOuth5Style');
+            setTimeout(function(){
+                acc[i].childNodes[1].childNodes[3].classList.add('displayOuth5Style');
+            }, 310);
         }
     });
     for (let i = 0; i < tabsLinks.length; i++) {

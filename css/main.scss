@@ -150,7 +150,7 @@ body {
                     transition: max-height 0.2s ease-out;
                     width: 3%;
                 }
-                &:hover{
+                &:hover {
                     cursor: pointer;
                 }
             }
@@ -192,7 +192,7 @@ body {
                     &:last-child {
                         border: none !important;
                     }
-                    &:hover{
+                    &:hover {
                         background: #2e9788;
                         color: #fff;
                     }
@@ -315,7 +315,7 @@ body {
                 }
             }
             h5 {
-                display: none;
+                // display: none;
                 width: 10%;
                 justify-content: center;
                 -moz-transform: translateY(40px);
@@ -349,35 +349,28 @@ body {
     .active {
         background: #2e9788;
     }
-
-    .disaleHover{
+    .disaleHover {
         transition: all 0.3s ease-in;
     }
-
     .disaleHover:hover {
         padding-top: 30% !important;
         padding-bottom: 103% !important;
     }
-
     .fadeIn {
         animation: fadeIn 0.4s;
         opacity: 1;
     }
-
     .fadeOut {
         opacity: 0;
         animation: fadeOut 0.4s;
     }
-
-    .animateAccordHide{
+    .animateAccordHide {
         animation: fadeOutAccord 0.1s;
     }
-
-    .animateAccordDisplay{
+    .animateAccordDisplay {
         animation: fadeInAccord 0.3s;
     }
-
-    .h5Style{
+    .h5Style {
         transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
         transform: translateY(0px) !important;
         animation: h5Style 0.4s cubic-bezier(0.55, 0.06, 0.68, 0.19);
@@ -386,23 +379,23 @@ body {
         margin: 0;
         padding-top: 20%;
     }
-
     .Outh5Style {
         transition: all 1s cubic-bezier(0.55, 0.06, 0.68, 0.19);
         animation: FadeOuth5Style 0.4s cubic-bezier(0.55, 0.06, 0.68, 0.19);
         -moz-transform: translateY(35px);
         transform: translateY(35px);
-        display: none !important;
+        display: flex;
         margin-top: -70%;
     }
-
-    .animwidthImg{
+    .displayOuth5Style {
+        display: none;
+    }
+    .animwidthImg {
         transition: all 10s ease;
         animation: widthImg 0.5s ease;
         width: 30px !important;
     }
-
-    .OutwidthImg{
+    .OutwidthImg {
         transition: all 10s ease;
         animation: FadeOutwidthImg 0.5s cubic-bezier(0.55, 0.06, 0.68, 0.19);
         width: 40px !important;
@@ -410,14 +403,14 @@ body {
 }
 
 @-moz-document url-prefix() {
-    .OutwidthImg{
+    .OutwidthImg {
         transition: all 0.4s ease;
     }
-    .animwidthImg{
+    .animwidthImg {
         transition: all 2.5s ease;
         animation: widthImg 0.5s ease-in-out;
     }
-    .content{
+    .content {
         .accord {
             height: 900px;
             span {
@@ -430,7 +423,7 @@ body {
                     -webkit-transform: rotate(-180deg) translateY(-22px);
                     transform: rotate(-180deg) translateY(-8px);
                 }
-            } 
+            }
         }
         .panel {
             @media (min-width: 1200px) {
@@ -438,7 +431,7 @@ body {
             }
             .panel-body {
                 .tabs {
-                    .tabsLinks{
+                    .tabsLinks {
                         padding: 10%;
                     }
                 }

@@ -565,7 +565,6 @@
 }
 
 .content .accord-icon h5 {
-  display: none;
   width: 10%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -658,8 +657,13 @@
             animation: FadeOuth5Style 0.4s cubic-bezier(0.55, 0.06, 0.68, 0.19);
     -webkit-transform: translateY(35px);
             transform: translateY(35px);
-    display: none !important;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
     margin-top: -70%;
+  }
+  .displayOuth5Style {
+    display: none;
   }
   .animwidthImg {
     -webkit-transition: all 10s ease;
