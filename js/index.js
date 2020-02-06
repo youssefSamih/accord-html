@@ -22,10 +22,6 @@ function slideDown(target){
         tabsLinks[i].removeAttribute('style');
         tabsLinks[i].setAttribute('class', 'tabsLinks');
     }
-    document.addEventListener('mousemove', evt => {
-        var y = evt.clientY / innerHeight;
-        document.documentElement.style.setProperty('--mouse-y', y - 10);
-    });
     let topOffset = e.target.offsetTop - 50 < 0 ? 0 : e.target.offsetTop - 5 ;
     e.target.setAttribute('class', 'tabsLinks background');
     e.target.setAttribute('data-before', topOffset+'px');
@@ -38,12 +34,12 @@ function slideDown(target){
     for(let i = 0; i < tabsLinks.length; i++) {
         tabsLinks[i].className = tabsLinks[i].className.replace(" active", "");
     }
-    if(document.getElementById(`${tabName}`)){
-        document.getElementById(`${tabName}`).style.display = "flex";
-        document.getElementById(`${tabName}`).style.marginBottom = "6%";
-    } else {
-        document.getElementById("empty").setAttribute("style", "display : flex; flex: 10");
-    }
+    // if(document.getElementById(`${tabName}`)){
+    //     document.getElementById(`${tabName}`).style.display = "flex";
+    //     document.getElementById(`${tabName}`).style.marginBottom = "6%";
+    // } else {
+    //     document.getElementById("empty").setAttribute("style", "display : flex; flex: 10");
+    // }
 }
 
 function displayPanel(j){
@@ -58,11 +54,11 @@ function displayPanel(j){
 
 function WidthChange (mq){
     for (let i = 0; i < acc.length; i++) {
-        document.getElementById("tab1").style.display = "flex";
+        // document.getElementsByClassName("panel").style.display = "flex";
         if (mq.matches) {
             acc[i].nextElementSibling.style.display = 'none';
             acc[i].addEventListener("click", function() {
-                tabsLinks[0].click();
+                // tabsLinks[0].click();
                 const panel = this.nextElementSibling;
                 for (let j = 0; j < acc.length; j++) {
                     const panel = acc[j].nextElementSibling;
@@ -92,7 +88,7 @@ function WidthChange (mq){
             }, 30);
             acc[i].addEventListener("click", function(e) {
                 clicked = false;
-                tabsLinks[0].click();
+                // tabsLinks[0].click();
                 const panel = this.nextElementSibling;
                 e.target.setAttribute('style', 'color: #fff');
                 for (let j = 0; j < acc.length; j++) {
